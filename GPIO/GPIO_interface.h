@@ -9,6 +9,6 @@
 #define GPIO_GPIO_INTERFACE_H_
 
 #define x 3
-#define GPIOA
+
 
 #endif /* GPIO_GPIO_INTERFACE_H_ */
