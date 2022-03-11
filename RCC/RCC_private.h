@@ -57,7 +57,7 @@ typedef struct
 	volatile u32 DCKCFGR		;   	/* RCC Dedicated Clocks configuration register,         Address offset: 0x8C */
 }RCC_TypeDef_t;
 
-#define RCC		((RCC_TypeDef_t *)RCC_BASE_ADDRESS)
+#define RCC									((RCC_TypeDef_t *)RCC_BASE_ADDRESS)
 
 /********************************************************************************************************************/
 /*																													*/
