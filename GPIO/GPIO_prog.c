@@ -26,7 +26,7 @@ void GPIO_vSetPinMode(u8 Copy_u8PortName ,u8 Copy_u8PinNum ,u8 Copy_u8Mode)
 		case GPIOD_PORT : GPIOD->MODER |= (u32) (Copy_u8Mode << (2U* Copy_u8PinNum ));	break;
 		case GPIOE_PORT : GPIOE->MODER |= (u32) (Copy_u8Mode << (2U* Copy_u8PinNum ));	break;
 		case GPIOH_PORT : GPIOH->MODER |= (u32) (Copy_u8Mode << (2U* Copy_u8PinNum ));	break;
-		default: 			/* ERROR */													 															break;
+		default: 			/* ERROR */													break;
 
 	}
 }
@@ -47,7 +47,7 @@ void  GPIO_vSetPinOutPutType(u8 Copy_u8PortName ,u8 Copy_u8PinNum ,u8 Copy_u8Out
 		case GPIOD_PORT	: GPIOD->OTYPER |= (u32) (Copy_u8OutputType << ( Copy_u8PinNum ));	break;
 		case GPIOE_PORT	: GPIOE->OTYPER |= (u32) (Copy_u8OutputType << ( Copy_u8PinNum ));	break;
 		case GPIOH_PORT	: GPIOH->OTYPER |= (u32) (Copy_u8OutputType << ( Copy_u8PinNum ));	break;
-		default: 			/* ERROR */															 															break;
+		default: 			/* ERROR */														break;
 
 	}
 }	
@@ -70,7 +70,7 @@ void GPIO_vSetPinOutSpeed(u8 Copy_u8PortName ,u8 Copy_u8PinNum ,u8 Copy_u8OutSpe
 		case GPIOD_PORT	: GPIOD->OSPEEDR |= (u32) (Copy_u8OutSpeed << (2U* Copy_u8PinNum ));	break;
 		case GPIOE_PORT	: GPIOE->OSPEEDR |= (u32) (Copy_u8OutSpeed << (2U* Copy_u8PinNum ));	break;
 		case GPIOH_PORT	: GPIOH->OSPEEDR |= (u32) (Copy_u8OutSpeed << (2U* Copy_u8PinNum ));	break;
-		default: 			/* ERROR */																 															break;
+		default: 			/* ERROR */															break;
 
 	}
 }
@@ -92,7 +92,7 @@ void GPIO_vSetPullType(u8 Copy_u8PortName ,u8 Copy_u8PinNum ,u8 Copy_u8PullType)
 		case GPIOD_PORT	: GPIOD->PUPDR |= (u32) (Copy_u8PullType << (2U* Copy_u8PinNum ));	break;
 		case GPIOE_PORT	: GPIOE->PUPDR |= (u32) (Copy_u8PullType << (2U* Copy_u8PinNum ));	break;
 		case GPIOH_PORT	: GPIOH->PUPDR |= (u32) (Copy_u8PullType << (2U* Copy_u8PinNum ));	break;
-		default: 			/* ERROR */															 															break;
+		default: 			/* ERROR */														break;
 	}
 }
 /*====================================================   END_ FUNCTION   ===========================================*/
@@ -112,7 +112,7 @@ u8 GPIO_u8ReadData(u8 Copy_u8PortName ,u8 Copy_u8PinNum)
 		case GPIOD_PORT	: L_u8Data = GET_BIT(GPIOD->IDR, Copy_u8PinNum); break;
 		case GPIOE_PORT	: L_u8Data = GET_BIT(GPIOE->IDR, Copy_u8PinNum); break;
 		case GPIOH_PORT	: L_u8Data = GET_BIT(GPIOH->IDR, Copy_u8PinNum); break;
-		default: 			/* ERROR */															 					 break;
+		default: 			/* ERROR */									 break;
 	}
 	return L_u8Data;
 }
@@ -138,7 +138,7 @@ void GPIO_vWriteData(u8 Copy_u8PortName ,u8 Copy_u8PinNum ,u8 Copy_u8State)
 		case GPIOD_PORT :  SET_BIT(GPIOD ->ODR,Copy_u8PinNum); break;
 		case GPIOE_PORT :  SET_BIT(GPIOE ->ODR,Copy_u8PinNum); break;
 		case GPIOH_PORT :  SET_BIT(GPIOH ->ODR,Copy_u8PinNum); break;
-		default: 			/* ERROR */															 break;
+		default: 			/* ERROR */						   break;
 		}		
 	}
 	else{
@@ -150,7 +150,7 @@ void GPIO_vWriteData(u8 Copy_u8PortName ,u8 Copy_u8PinNum ,u8 Copy_u8State)
 		case GPIOD_PORT :  CLR_BIT(GPIOD ->ODR,Copy_u8PinNum); break;
 		case GPIOE_PORT :  CLR_BIT(GPIOE ->ODR,Copy_u8PinNum); break;
 		case GPIOH_PORT :  CLR_BIT(GPIOH ->ODR,Copy_u8PinNum); break;
-		default: 			/* ERROR */															 break;
+		default: 			/* ERROR */						   break;
 		}
 	}
 }
@@ -174,7 +174,7 @@ void GPIO_vDirectionSetReset(u8 Copy_u8PortName ,u8 Copy_u8PinNum ,u8 Copy_u8Sta
 			case GPIOD_PORT :	GPIOD->BSRR = (1U<<Copy_u8PinNum);	break;
 			case GPIOE_PORT :	GPIOE->BSRR = (1U<<Copy_u8PinNum);	break;
 			case GPIOH_PORT:	GPIOH->BSRR = (1U<<Copy_u8PinNum);	break;
-			default: 			/* ERROR */															break;
+			default: 			/* ERROR */							break;
 
 		}		
 	}
@@ -188,7 +188,7 @@ void GPIO_vDirectionSetReset(u8 Copy_u8PortName ,u8 Copy_u8PinNum ,u8 Copy_u8Sta
 			case GPIOD_PORT :	GPIOD->BSRR = (1U<<(Copy_u8PinNum+16));	break;
 			case GPIOE_PORT :	GPIOE->BSRR = (1U<<(Copy_u8PinNum+16));	break;
 			case GPIOH_PORT :	GPIOH->BSRR = (1U<<(Copy_u8PinNum+16));	break;
-			default: 			/* ERROR */																	break;
+			default: 			/* ERROR */								break;
 
 		}
 	}
@@ -259,7 +259,7 @@ void GPIO_vSetPinAltFn( u8 Copy_u8PortName ,u8 Copy_u8PinNum, u8 Copy_u8ALF )
 			case GPIOD_PORT: GPIOA->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
 			case GPIOE_PORT: GPIOA->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
 			case GPIOH_PORT: GPIOA->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
-			default: 			/* ERROR */																											break;
+			default: 			/* ERROR */													break;
 		}
 	}
 	else
@@ -272,7 +272,7 @@ void GPIO_vSetPinAltFn( u8 Copy_u8PortName ,u8 Copy_u8PinNum, u8 Copy_u8ALF )
 			case GPIOD_PORT: GPIOA->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
 			case GPIOE_PORT: GPIOA->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
 			case GPIOH_PORT: GPIOA->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
-			default: 			/* ERROR */																															break;
+			default: 			/* ERROR */															break;
 		}
 	}
 }
