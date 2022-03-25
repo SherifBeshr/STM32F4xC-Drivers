@@ -124,45 +124,45 @@ u8 NVIC_vGetActiveFlag(u8 Copy_u8IRQNumber)
 	return L_u8ActiveState;
 }
 
-void NVIC_vConfigGroupSub(u8 Copy_u8Config)
-{
-	switch(Copy_u8Config)
-	{
-		case GROUP_4_SUB_0: SCB_AIRCR = 0x5FA0300	break;
-		case GROUP_3_SUB_1:	SCB_AIRCR = 0x5FA0400	break;
-		case GROUP_2_SUB_2:	SCB_AIRCR = 0x5FA0500	break;
-		case GROUP_1_SUB_3:	SCB_AIRCR = 0x5FA0600	break;
-		case GROUP_0_SUB_4:	SCB_AIRCR = 0x5FA0700	break;
-	}
-}
+//void NVIC_vConfigGroupSub(u8 Copy_u8Config)
+//{
+//	switch(Copy_u8Config)
+//	{
+//		case GROUP_4_SUB_0: SCB_AIRCR = 0x5FA0300	break;
+//		case GROUP_3_SUB_1:	SCB_AIRCR = 0x5FA0400	break;
+//		case GROUP_2_SUB_2:	SCB_AIRCR = 0x5FA0500	break;
+//		case GROUP_1_SUB_3:	SCB_AIRCR = 0x5FA0600	break;
+//		case GROUP_0_SUB_4:	SCB_AIRCR = 0x5FA0700	break;
+//	}
+//}
 
-void NVIC_vSetGroupSubGroupPriority(u8 Copy_u8IRQNum, u8 Copy_GroupPriority, u8 Copy_SubGroup, u8 GroupPriorityCFG)
-{
-	switch(GroupPriorityCFG)
-	{
-		case GROUP_4_SUB_0:
-		SCB_AIRCR = 0x5FA0300;
-		NVIC_IPR[Copy_u8IRQNum] = (u8)(Copy_GroupPriority << 4U);
-		break;
-		/**********************************************************************************************************/
-		case GROUP_3_SUB_1:
-		SCB_AIRCR = 0x5FA0400;
-		NVIC_IPR[Copy_u8IRQNum] = (u8)(Copy_GroupPriority << 5U) | (u8)(Copy_SubGroup << 4U);
-		break;
-		/**********************************************************************************************************/
-		case GROUP_2_SUB_2:
-		SCB_AIRCR = 0x5FA0500;
-		NVIC_IPR[Copy_u8IRQNum] = (u8)(Copy_GroupPriority << 6U) | (u8)(Copy_SubGroup << 4U);
-		break;
-		/**********************************************************************************************************/	
-		case GROUP_1_SUB_3:
-		SCB_AIRCR = 0x5FA0600;
-		NVIC_IPR[Copy_u8IRQNum] = (u8)(Copy_GroupPriority << 7U) | (u8)(Copy_SubGroup << 4U);
-		break;
-		/**********************************************************************************************************/
-		case GROUP_0_SUB_4:
-		SCB_AIRCR = 0x5FA0700;
-		NVIC_IPR[Copy_u8IRQNum] = (u8)(Copy_SubGroup << 4U);
-		break;
-	}
-}
+//void NVIC_vSetGroupSubGroupPriority(u8 Copy_u8IRQNum, u8 Copy_GroupPriority, u8 Copy_SubGroup, u8 GroupPriorityCFG)
+//{
+//	switch(GroupPriorityCFG)
+//	{
+//		case GROUP_4_SUB_0:
+//		SCB_AIRCR = 0x5FA0300;
+//		NVIC_IPR[Copy_u8IRQNum] = (u8)(Copy_GroupPriority << 4U);
+//		break;
+//		/**********************************************************************************************************/
+//		case GROUP_3_SUB_1:
+//		SCB_AIRCR = 0x5FA0400;
+//		NVIC_IPR[Copy_u8IRQNum] = (u8)(Copy_GroupPriority << 5U) | (u8)(Copy_SubGroup << 4U);
+//		break;
+//		/**********************************************************************************************************/
+//		case GROUP_2_SUB_2:
+//		SCB_AIRCR = 0x5FA0500;
+//		NVIC_IPR[Copy_u8IRQNum] = (u8)(Copy_GroupPriority << 6U) | (u8)(Copy_SubGroup << 4U);
+//		break;
+//		/**********************************************************************************************************/
+//		case GROUP_1_SUB_3:
+//		SCB_AIRCR = 0x5FA0600;
+//		NVIC_IPR[Copy_u8IRQNum] = (u8)(Copy_GroupPriority << 7U) | (u8)(Copy_SubGroup << 4U);
+//		break;
+//		/**********************************************************************************************************/
+//		case GROUP_0_SUB_4:
+//		SCB_AIRCR = 0x5FA0700;
+//		NVIC_IPR[Copy_u8IRQNum] = (u8)(Copy_SubGroup << 4U);
+//		break;
+//	}
+//}
