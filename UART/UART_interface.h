@@ -59,6 +59,7 @@ void UART_vEnable(u8 copy_u8UART_ID);
 void UART_vDisable(u8 copy_u8UART_ID);
 /*===============   4-Function To Send Data					===============*/
 void UART_vSendByte(u8 copy_u8UART_ID, u8 copy_u8Data);
+void UART_vSendString(u8 copy_u8UART_ID, u8 *copy_u8Str);
 
 /*===============   5-Function To Read Data					===============*/
 u8 UART_u8ReadByte(u8 copy_u8UART_ID);

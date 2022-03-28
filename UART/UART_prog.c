@@ -80,6 +80,20 @@ void UART_vSendByte(u8 copy_u8UART_ID, u8 copy_u8Data)
 	while(BIT_IS_CLEAR(uhandler->SR, USART_SR_TC));
 }
 
+/*===============   Function To Send String					===============*/
+void UART_vSendString(u8 copy_u8UART_ID, u8 *copy_u8Str)
+{
+	u8 i = 0;
+	UART_REG uhandler = UART_GetHandler(copy_u8UART_ID);
+	while(copy_u8Str[i] != '\0')
+	{
+		uhandler->DR = copy_u8Str[i];
+		while(BIT_IS_CLEAR(uhandler->SR, USART_SR_TC));
+		//UART_vSendByte(copy_u8UART_ID,copy_u8Str[i]);
+		i++;
+	}
+}
+
 /*===============   5-Function To Read Data					===============*/
 u8 UART_u8ReadByte(u8 copy_u8UART_ID)
 {
