@@ -254,11 +254,11 @@ void GPIO_vSetPinAltFn( u8 Copy_u8PortName ,u8 Copy_u8PinNum, u8 Copy_u8ALF )
 		switch(Copy_u8PortName)
 		{
 			case GPIOA_PORT: GPIOA->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
-			case GPIOB_PORT: GPIOA->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
-			case GPIOC_PORT: GPIOA->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
-			case GPIOD_PORT: GPIOA->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
-			case GPIOE_PORT: GPIOA->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
-			case GPIOH_PORT: GPIOA->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
+			case GPIOB_PORT: GPIOB->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
+			case GPIOC_PORT: GPIOC->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
+			case GPIOD_PORT: GPIOD->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
+			case GPIOE_PORT: GPIOE->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
+			case GPIOH_PORT: GPIOH->AFRL |= (u32)((Copy_u8ALF << (4U * Copy_u8PinNum)));	break;
 			default: 			/* ERROR */													break;
 		}
 	}
@@ -267,11 +267,11 @@ void GPIO_vSetPinAltFn( u8 Copy_u8PortName ,u8 Copy_u8PinNum, u8 Copy_u8ALF )
 		switch(Copy_u8PortName)
 		{
 			case GPIOA_PORT: GPIOA->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
-			case GPIOB_PORT: GPIOA->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
-			case GPIOC_PORT: GPIOA->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
-			case GPIOD_PORT: GPIOA->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
-			case GPIOE_PORT: GPIOA->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
-			case GPIOH_PORT: GPIOA->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
+			case GPIOB_PORT: GPIOB->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
+			case GPIOC_PORT: GPIOC->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
+			case GPIOD_PORT: GPIOD->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
+			case GPIOE_PORT: GPIOE->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
+			case GPIOH_PORT: GPIOH->AFRH |= (u32)((Copy_u8ALF << ((4U * Copy_u8PinNum) - 32U)));	break;
 			default: 			/* ERROR */															break;
 		}
 	}
