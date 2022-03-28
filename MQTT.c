@@ -42,7 +42,7 @@ void MQTT_Connect(u8* clientID)
 	packetInd += strlen(clientID);
 
 	// send packet
-	UART_vSendString(UART_ID_1, packet);
+	UART_vSendString(UART_ID_1, packet, packetInd);
 
 	//HAL_UART_Transmit(&huart6, packet, packetInd, packetInd*2);
 }
@@ -77,7 +77,7 @@ void MQTT_Publish(u8* topic, u8* msg, u32 len, u8 QoS)
 	}
 
 	// send packet
-	UART_vSendString(UART_ID_1, packet);
+	UART_vSendString(UART_ID_1, packet, packetInd);
 	//HAL_UART_Transmit(&huart6, packet, packetInd, packetInd*2);
 }
 void MQTT_Subscribe(u8* topic)
@@ -99,6 +99,6 @@ void MQTT_Subscribe(u8* topic)
 
 	packet[packetInd++] = 0x01;
 	// send packet
-	UART_vSendString(UART_ID_1, packet);
+	UART_vSendString(UART_ID_1, packet, packetInd);
 	//HAL_UART_Transmit(&huart6, packet, packetInd, packetInd*2);
 }

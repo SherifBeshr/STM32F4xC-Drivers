@@ -18,10 +18,10 @@
 
 
   /* =============  Function To Delay By Milliseconds ( 16MHz CPU CLK )   ============= */
-  extern void Delay_vMsIn16MHz(u16 copy_u16CountNum);
+ void Delay_vMsIn16MHz(u16 copy_u16CountNum);
 
  /* =============  Function To Delay By Microseconds ( 16MHz CPU CLK )   ============= */
-  extern void Delay_vUsIn16MHzint (u16 copy_u16CountNum);
+  void Delay_vUsIn16MHzint (u16 copy_u16CountNum);
 
 
 
